@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--This is for showing chart brooo-->
+    <link rel="stylesheet" href="style.css" />
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <h1>Expense Tracker</h1>
+    <!-- <h1>Expense Tracker</h1> -->
+
+<div id="notification" class="notification">
+    Please enter both description and amount.
+</div>
+
+<div class="main-container">
+
+    <div class="main-container">
+        <!-- Rules Text Box -->
+        <div class="rules-box">
+            <h3>Rules</h3>
+            <p>1. Income entered through the <strong> Income </strong>  form is taxed automatically based on the configured tax slabs.</p>
+            <p>2. Expenses entered through the <strong> Expense </strong> form are automatically recorded as negative values.</p>
+            <p>3. A pie chart below provides a visual summary of all income and expense transactions.</p>
+            <p>4. All transactions are saved automatically in your browser using Local Storage.</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <div class="header">
+                <img src="Gemini_Generated_Image_k6qw80k6qw80k6qw.jpg" alt="Expense Tracker" />
+                <div class="balance-container">
+                    <h2>Your Balance</h2>
+                    <h2 id="balance" class="balance">₹0.00</h2>
+                </div>
+            </div>
+            <div class="inc-exp-container">
+                <div>
+                    <h4>Income</h4>
+                    <p id="money-plus" class="money plus">+₹0.00</p>
+                </div>
+                <div>
+                    <h4>Expenses</h4>
+                    <p id="money-minus" class="money minus">-₹0.00</p>
+                </div>
+            </div>
+            <h3>History</h3>
+            <ul id="list" class="list"></ul>
+
+            <h3>Add Income</h3>
+            <form id="income-form">
+                <div class="form-control">
+                    <label for="income-text">Description</label>
+                    <input type="text" id="income-text" placeholder="Enter income description..." />
+                </div>
+                <div class="form-control">
+                    <label for="income-amount">Amount</label>
+                    <input type="number" id="income-amount" placeholder="Enter income amount..." />
+                </div>
+                <button class="btn">Add Income</button>
+            </form>
+
+            <h3>Add Expenditure</h3>
+            <form id="expense-form">
+                <div class="form-control">
+                    <label for="expense-text">Description</label>
+                    <input type="text" id="expense-text" placeholder="Enter expense description..." />
+                </div>
+                <div class="form-control">
+                    <label for="expense-amount">Amount</label>
+                    <input type="number" id="expense-amount" placeholder="Enter expense amount..." />
+                </div>
+                <button class="btn">Add Expense</button>
+            </form>
+        </div>
+
+        <!-- Pie Chart Section -->
+        <div class="chart-section">
+            <h3>Visual Representation</h3>
+            <canvas id="pieChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>

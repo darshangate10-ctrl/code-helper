@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+    --main-color: #13168d;
+    --secondary-color: #393a57;
+    --ternary-color: #486ba6;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --background-color: #e5e6ed;
+    --background-secondary-color: #fff;
+    --border-color: #80717f;
+    --border-secondary-color: #bcc0cb;
+    --plus-color: #2ecc71;
+    --minus-color: #c0392b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #444;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 900px;
+    /* Increase the width of the site */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header img {
+    max-width: 400px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.balance-container {
+    text-align: right;
+}
+
+.inc-exp-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.inc-exp-container div {
+    flex: 1;
+    text-align: center;
+}
+
+/* History Section */
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    max-height: 300px;
+    /* Set a maximum height for the history section */
+    overflow: auto;
+    /* Enable both vertical and horizontal scrolling */
+    border: 1px solid #ddd;
+    /* Add a border for better visibility */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    /* Light background for the history section */
+    padding-right: 10px;
+    /* Add padding to ensure the delete button is visible */
+}
+
+/* History List Items */
+.list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Align items vertically */
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 600px;
+    /* Set a minimum width to allow horizontal scrolling */
+}
+
+/* Transaction Text */
+.transaction-text {
+    flex: 1.5;
+    /* Allocate space for the description */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowing text */
+}
+
+/* Transaction Amount */
+.transaction-amount {
+    flex: 0.8;
+    /* Allocate less space for the amount */
+    text-align: right;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+/* Delete Button */
+.delete-btn {
+    flex: 0.3;
+    /* Allocate enough space for the delete button */
+    background: none;
+    border: none;
+    color: #c0392b;
+    /* Red color for the delete button */
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Add spacing between the amount and the delete button */
+}
+
+.delete-btn:hover {
+    color: #e74c3c;
+    /* Slightly brighter red on hover */
+}
+
+/* Rules Box */
+.rules-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.rules-box h3 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.rules-box p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Content Section */
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Chart Section */
+.chart-section {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 1.17rem;
+}
+
+.balance {
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 2rem;
+}
+
+h3 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+}
+
+h2,
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.inc-exp-container {
+    background-color: var(--background-secondary-color);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.inc-exp-container>div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container>div:first-of-type {
+    border-right: 1px solid var(--border-secondary-color);
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: var(--plus-color);
+}
+
+.money.minus {
+    color: var(--minus-color);
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+    border: 1px solid var(--border-secondary-color);
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: var(--main-color);
+    box-shadow: var(--box-shadow);
+    color: var(--background-secondary-color);
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: var(--background-secondary-color);
+    box-shadow: var(--box-shadow);
+    color: var(--ternary-color);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.list li.plus {
+    border-left: 5px solid var(--plus-color);
+}
+
+.list li.minus {
+    border-left: 5px solid var(--minus-color);
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: var(--minus-color);
+    color: var(--background-secondary-color);
+    box-shadow: var(--box-shadow);
+    border: 0;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 10px;
+    margin: 10px 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -73%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+.notification-container {
+    background-color: var(--minus-color);
+    color: var(--background-secondary-color);
+    border-radius: 5px 5px 0 0;
+    padding: 15px 20px;
+    position: fixed;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.notification-container.show {
+    opacity: 1;
+}
+
+.notification-container p {
+    margin: 0;
+}
+
+.export-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Income Section */
+#income-form {
+    background-color: #e8f5e9;
+    /* Very light green background */
+    padding: 20px;
+    border: 1px solid #c8e6c9;
+    /* Light green border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+    /* Add a subtle shadow for minimalism */
+}
+
+/* Expense Section */
+#expense-form {
+    background-color: #ffebee;
+    /* Very light red background */
+    padding: 20px;
+    border: 1px solid #ffcdd2;
+    /* Light red border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+    /* Add a subtle shadow for minimalism */
+}
+
+/* Scrollbar Styling (Optional, for better aesthetics) */
+.list::-webkit-scrollbar {
+    height: 8px;
+    /* Horizontal scrollbar height */
+    width: 8px;
+    /* Vertical scrollbar width */
+}
+
+.list::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+}
